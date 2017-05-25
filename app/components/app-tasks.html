@@ -1,0 +1,31 @@
+<section role="main">
+  <div class="row">
+    <div class="large-6 columns">
+
+      <list-tasks
+        status="PENDING"
+        data="$ctrl.tasks"
+        on-remove="$ctrl.removeTask(task)"
+        on-move="$ctrl.moveTask(task, status)"
+        on-remove-tasks="$ctrl.removeTasks(tasks)"
+        on-move-tasks="$ctrl.moveTasks(status)">
+      </list-tasks>
+
+      <add-item on-add="$ctrl.addTask(task)"></add-item>
+
+    </div>
+    <div class="large-6 columns">
+
+      <list-tasks
+        status="COMPLETED"
+        data="$ctrl.tasks"
+        on-remove="$ctrl.removeTask(task)"
+        on-move="$ctrl.moveTask(task, status)"
+        on-remove-tasks="$ctrl.removeTasks(tasks)"
+        on-move-tasks="$ctrl.moveTasks(status)">
+      </list-tasks>
+
+    </div>
+  </div>
+
+</section>
