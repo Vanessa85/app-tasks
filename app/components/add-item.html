@@ -1,10 +1,10 @@
 <form ng-submit="$ctrl.submit($event)">
   <div class="row collapse">
-    <div class="small-10 columns">
-      <input type="text" placeholder="Nueva tarea" ng-model="$ctrl.name" required />
+    <div class="large-10 small-10 columns">
+      <input type="text" placeholder="New task" pattern="[a-zA-Z0-9\s]+" ng-model="$ctrl.name" required />
     </div>
-    <div class="small-2 columns">
-      <button type="submit" class="button postfix">Agregar</button>
+    <div class="large-2 small-2 columns">
+      <button type="submit" class="button postfix">Add</button>
     </div>
   </div>
 </form>

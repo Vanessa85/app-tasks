@@ -1,5 +1,9 @@
+<top-bar></top-bar>
+
 <section role="main">
-  <div class="row">
+
+
+  <div class="expanded row">
     <div class="large-6 columns">
 
       <list-tasks
@@ -10,9 +14,7 @@
         on-remove-tasks="$ctrl.removeTasks(status)"
         on-move-tasks="$ctrl.moveTasks(status)">
       </list-tasks>
-
       <add-item on-add="$ctrl.addTask(task)"></add-item>
-
     </div>
     <div class="large-6 columns">
 

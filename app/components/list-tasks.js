@@ -50,7 +50,6 @@
     }
 
     function removeSelectedTasks() {
-      // vm.onRemoveTasks({ tasks: vm.data.filter(item => item.selected && item.status === vm.status) });
       vm.onRemoveTasks({ status: vm.status });
     }
 
