@@ -36,8 +36,8 @@
       task.status = getNewStatus(status);
     }
 
-    function removeTasks(tasks) {
-      vm.tasks = vm.tasks.filter(item => tasks.indexOf(item) === -1);
+    function removeTasks(status) {
+      vm.tasks = vm.tasks.filter(item => !(item.selected && item.status === status));
     }
 
     function moveTasks(status) {
