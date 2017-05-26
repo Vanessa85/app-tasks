@@ -10,7 +10,7 @@
       onRemoveTasks: '&',
       onMoveTasks: '&'
     },
-    templateUrl: '/app/components/list-tasks.html',
+    templateUrl: 'app/components/list-tasks.html',
     controller: listTasksCtrl
   };
 

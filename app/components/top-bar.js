@@ -2,7 +2,7 @@
   'use strict';
 
   var topBar = {
-    templateUrl: '/app/components/top-bar.html',
+    templateUrl: 'app/components/top-bar.html',
     controller: topBarCtrl
   };
 

@@ -5,7 +5,7 @@
     bindings: {
       onAdd: '&'
     },
-    templateUrl: '/app/components/add-item.html',
+    templateUrl: 'app/components/add-item.html',
     controller: addItemCtrl
   };
 
