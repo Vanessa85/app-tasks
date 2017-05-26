@@ -1,4 +1,4 @@
-<h1>Tasks <small ng-bind="$ctrl.status"></small></h1>
+<h3>Tasks <small ng-bind="$ctrl.status.toLowerCase()"></small></h3>
 
 <div class="button-group">
     <button class="button tiny primary"
@@ -12,27 +12,37 @@
 </div>
 
 <table class="hover" style="width: 100%">
+  <thead>
+    <tr>
+      <th width="40" class="text-center">
+        <input type="checkbox" ng-checked="$ctrl.isChecked()" style="margin:0"
+          ng-model="$ctrl.selectedAll" ng-change="$ctrl.onChangeAll()" />
+      </th>
+      <th>Name</th>
+      <th colspan="2">Actions</th>
+    </tr>
+  </thead>
   <tbody>
     <tr ng-repeat="item in $ctrl.data | filter: { status: $ctrl.status }">
-      <td width="40">
+      <td class="text-center">
         <input type="checkbox"
           style="margin:0"
           ng-model="item.selected" />
       </td>
       <td ng-bind="item.name"></td>
-      <td width="40">
+      <td width="60">
         <a href="#" ng-click="$ctrl.moveTask($event, item)">
           <i ng-class="{'fa-chevron-right': $ctrl.status === 'PENDING', 'fa-chevron-left': $ctrl.status === 'COMPLETED' }" class="fa" aria-hidden="true"></i>
         </a>
       </td>
-      <td width="40">
+      <td width="60">
         <a href="#" ng-click="$ctrl.removeTask($event, item)">
           <i class="fa fa-trash-o" aria-hidden="true"></i>
         </a>
       </td>
     </tr>
     <tr ng-if="$ctrl.getTotal() === 0">
-      <td colspan="4">No hay registros</td>
+      <td colspan="4" class="text-center">No records</td>
     </tr>
   </tbody>
 </table>

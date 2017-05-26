@@ -22,12 +22,15 @@
   function listTasksCtrl() {
     var vm = this;
 
+    vm.selectedAll = false;
     vm.removeTask = removeTask;
     vm.moveTask = moveTask;
     vm.getTotal = getTotal;
     vm.getSelectedTasks = getSelectedTasks;
     vm.removeSelectedTasks = removeSelectedTasks;
     vm.moveSelectedTasks = moveSelectedTasks;
+    vm.onChangeAll = changeAll;
+    vm.isChecked = isChecked;
 
     //////////
 
@@ -55,6 +58,18 @@
 
     function moveSelectedTasks() {
       vm.onMoveTasks({ status: vm.status });
+    }
+
+    function changeAll() {
+      vm.data
+        .filter(item => item.status === vm.status)
+        .forEach(item => item.selected = vm.selectedAll);
+    }
+
+    function isChecked() {
+      var tasks = vm.data.filter(item => item.status === vm.status);
+      vm.selectedAll = tasks.length > 0 && tasks.every(item => item.selected);
+      return vm.selectedAll;
     }
 
   }
