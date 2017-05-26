@@ -1,6 +1,6 @@
 <form ng-submit="$ctrl.submit($event)">
   <div class="input-group">
-    <input type="text" class="input-group-field" placeholder="New task" pattern="[a-zA-Z0-9\s]+" ng-model="$ctrl.name" required />
+    <input type="text" class="input-group-field" placeholder="New task" pattern="^[a-zA-Z][a-zA-Z0-9\s]*" ng-model="$ctrl.name" required />
     <div class="input-group-button">
       <button type="submit" class="button">Add</button>
     </div>

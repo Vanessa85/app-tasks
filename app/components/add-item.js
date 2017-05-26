@@ -29,7 +29,7 @@
     function submit(e) {
       e.preventDefault();
       var task = {
-        name: vm.name,
+        name: vm.name.trim(),
         selected: false,
         status: 'PENDING'
       };
